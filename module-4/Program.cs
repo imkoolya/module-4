@@ -8,7 +8,12 @@ class MainClass
 {
     public static void Main(string[] args)
     {
+        int a;
+        int b;
+        double x;
+        double y;
 
+        bool result = a < b | x > y;
     }
 }
 
