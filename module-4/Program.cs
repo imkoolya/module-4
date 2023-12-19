@@ -10,29 +10,24 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-        int temp;
+        int[,] array = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+        var temp = 0;
 
-        for (int i = 0; i < arr.Length - 1; i++)
+        for (int i = 0; i <= array.GetUpperBound(0); i++)
         {
-            for (int j = i + 1; j < arr.Length; j++)
-            {
-                if (arr[i] > arr[j])
+            for (int j = 0; j <= array.GetUpperBound(1); j++)
+                for (int k = j + 1; k <= array.GetUpperBound(1); k++)
+                    if (array[i, j] > array[i, k])
                 {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                        temp = array[i, k];
+                        array[i, k] = array[i, j];
+                        array[i, j] = temp;
                 }
-            }
         }
-
-
-        foreach (var item in arr)
+        foreach (var item in array)
         {
             Console.Write(item + " ");
         }
     }
 }
-
-
 
